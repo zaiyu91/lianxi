@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>ㅁㄴㅇ</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		/* reset */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}
+		fieldset,img{border:none;}
+		dl,ul,ol,menu,li{list-style:none;}
+		blockquote, q{quotes: none;}
+		blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;}
+		input,select,textarea,button{vertical-align:middle;}
+		button{border:none;background-color:transparent;cursor:pointer;}
+		body{background:#fff;}
+		body,th,td,input,select,textarea,button{font-size:14px;line-height:1; font-family:'맑은 고딕','돋움',dotum,sans-serif;color:#333;font-weight:normal; }
+		a{color:#333;text-decoration:none;}
+		a:active, a:hover{text-decoration:none;}
+		address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
+		img{vertical-align:top;}
+
+		/* style */
+		#wrap{padding-top:10px;}
+		#wrap > div{width:80%;max-width:960px;margin:0 auto;padding:20px;background-color:#d33;}
+		#slideFrame ul{position:relative;}
+		#slideFrame ul li:not(:first-child){display:none;position:absolute;top:0;left:0;}
+		#slideFrame ul li img{width:100%;max-width:960px;}
+
+		#btn{padding:30px 0;}
+		#btn > div{text-align:center;}
+		#btn > div > a{overflow:hidden;display:inline-block;width:15px;height:15px;line-height:15px;margin:0 3px;border:1px solid #333;border-radius:3px;background:rgba(0,0,0,0.5);text-indent:-99999px;}
+		#btn > div > a:hover,
+		#btn > div > a:active,
+		#btn > div > a:focus,
+		#btn > div > a.on{background:rgba(0,0,0,0.8);}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+
+			//slideImg 버튼 생성(사진에 갯수에 따라 자동 생성)
+			$("#slideFrame").after("<div id='btn'><div></div></div>");
+			var liLength=$("#slideFrame ul li").length;
+			for(var i=0;i<liLength;i++){
+				$("#btn > div").append("<a href='javascript:;'>"+(i+1)+"</a>");
+			}
+			//
+
+			var index;
+			var speed=800;
+			$("#btn a").click(function(){
+				index=$(this).index();
+				if($("#slideFrame ul li:visible").index() != index){
+					$("#slideFrame ul li:visible").fadeOut(speed);
+					$("#slideFrame ul li").eq(index).fadeIn(speed);
+				}
+			});
+
+		});
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<div>
+
+		<div id="slideFrame">
+			<ul>
+				<li><img src="img/apple.jpg" alt="apple"></li>
+				<li><img src="img/lemon.jpg" alt="lemon"></li>
+				<li><img src="img/fruits.jpg" alt="fruits"></li>
+				<li><img src="img/squirrel.jpg" alt="squirrel"></li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

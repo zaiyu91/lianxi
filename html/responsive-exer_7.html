@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{min-width: 320px;max-width: 1200px; width: 62.5%;margin: 20px auto 0;}
+		header, footer{height:50px;background-color: #d33;}
+
+		#content{padding: 1.666666666666667%;border:1px solid #d33;border-top: none;border-bottom: none;} /*1200px 기준으로 20px/ #content width 1080*/
+		#content ul{overflow: hidden;}
+		#content ul li{float: left;width: 33.33%;} /*1200px 기준으로 400px*/
+		#content ul li a{display: block;height: 30px;line-height: 30px;margin: 0.8333333333333333%;background-color: #222;color: #fff;font-size: 20px;font-weight: bold;text-align: center;}
+
+		@media screen and (max-width:768px){
+			#wrap{width: 100%;border: none;}
+
+			#content ul li{width: 50%;} /*1200px 기준으로 400px*/
+			#content ul li a{background-color: #ff0;color: #000;border: 1px solid #000;}
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+
+		<header></header>
+
+		<div id="content">
+
+			<ul>
+
+				<li><a href="javascript:;">1</a></li>
+				<li><a href="javascript:;">2</a></li>
+				<li><a href="javascript:;">3</a></li>
+				<li><a href="javascript:;">4</a></li>
+				<li><a href="javascript:;">5</a></li>
+				<li><a href="javascript:;">6</a></li>
+
+			</ul>
+
+		</div>
+
+		<footer></footer>
+
+	</div>
+</body>
+</html>

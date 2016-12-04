@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#ispBlockPop{width:700px;margin:20px 0 0 20px;padding:20px;border:2px solid #ccc;}
+		#ispBlockPop .location{text-align:right;padding-bottom:10px;}
+		#ispBlockPop .title{padding-bottom:3px;border-bottom:2px solid #333;}
+		#ispBlockPop .title h1{font-size:15px;color:#333;}
+		#ispBlockPop .date{padding:5px 0 10px 3px;}
+		#ispBlockPop .ispBlockList{padding:0 3px;}
+		#ispBlockPop .ispBlockList table{width:100%;border-collapse:collapse;}
+		#ispBlockPop .ispBlockList table th{height:30px;line-height:30px;border:1px solid #ccc;background-color:#ccc;}
+		#ispBlockPop .ispBlockList table td{height:28px;border:1px solid #ccc;text-align:center;}
+		#ispBlockPop .ispBlockList table td.red{color:#f00;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="ispBlockPop">
+		
+		<div class="location">
+			HOME &gt; 저작권목록 현황 &gt; <strong>접속차단결과 목록</strong>
+		</div>
+		
+		<div class="title">
+		
+			<h1>접속차단결과 목록</h1>
+			
+		</div>
+		
+		<div class="date">
+			최종실행일시 :
+				<span>2016-06-04 18시</span>
+		</div>
+		
+		<div class="ispBlockList">
+			<table>
+				<caption style="display:none;">접속차단결과 목록</caption>
+				<colgroup>
+					<col style="width:10%" />
+					<col />
+					<col style="width:18%" />
+					<col style="width:10%" />
+					<col style="width:10%" />
+					<col style="width:10%" />
+					<col style="width:10%" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>사이트명</th>
+						<th>IP</th>
+						<th>국가</th>
+						<th>SKT</th>
+						<th>KT</th>
+						<th>LGU</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>toptrn</td>
+						<td>185.27.132.198</td>
+						<td>영국</td>
+						<td>차단</td>
+						<td>차단</td>
+						<td>차단</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			//'차단'이면 text color 변경
+			$(".ispBlockList td").each(function(){
+				if($(this).text() == "차단"){
+					$(this).addClass("red");
+				}
+			});
+			
+		});
+	</script>
+</body>
+</html>

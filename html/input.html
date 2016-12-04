@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		a{text-decoration:none;color:#333;}
+
+		#wrap{width:200px;margin:30px auto 0;position:relative;}
+		.fam_site{border:2px solid #222;}
+		.fam_site a{display:block;width:100%;height:50px;line-height:50px;padding-left:10px;}
+
+		#fam_list{display:none;position:absolute;top:55px;left:0;width:196px;border:2px solid #f00;}
+		ul.on{display:block;}
+		#fam_list li a{display:block;;padding:3px 0 3px 10px;}
+		#fam_list li a:hover,
+		#fam_list li a:active,
+		#fam_list li a:focus{background-color:#eee;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var state=false;
+
+			$(".fam_site a")click(function(){
+				if(!state){
+					$("#fam_list").addClass("on");
+					state=true;
+				}else{
+					$("#fam_list").removeClass("on");
+					state=false;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+
+		<div class="fam_site">
+			<a href="#">패밀리사이트</a>
+		</div>
+
+		<ul id="fam_list">
+			<li><a href="#">Site01</a></li>
+			<li><a href="#">Site02</a></li>
+			<li><a href="#">Site03</a></li>
+		</ul>
+
+	</div>
+</body>
+</html>

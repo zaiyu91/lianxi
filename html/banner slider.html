@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:500px;margin:0 auto;padding:10px;border:2px solid #222;}
+		.vis_frame{height:300px;overflow:hidden;position:relative;}
+		.vis_frame ul{position:absolute;top:0;}
+		.vis_frame ul li{float:left;}
+		.vis_frame ul li img{width:100%;height:100%;}
+
+		.btn{padding:20px;text-align:center;}
+		.btn button{width:50px;height:30px;margin:0 20px;border:2px solid #222;font-weight:bold;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var visHeight=$(".vis_frame").innerHeight();
+			var visWidth=$(".vis_frame").innerWidth();
+			var liWidth=$(".vis_frame ul li").innerWidth();
+			var liLength=$(".vis_frame ul li").length;
+			$(".vis_frame ul").height(visHeight).width(liWidth*liLength);
+			$(".vis_frame ul li").width(visWidth).height(visHeight);
+
+			var state=false;
+			var spd=1200;
+			var roll;
+
+			function next(){
+				if(!state){
+					state=true;
+					$(".vis_frame ul").stop().animate({left:-liWidth},spd,function(){
+						$(".vis_frame ul").children("li:first").insertAfter($(".vis_frame ul").children("li:last"));
+						$(".vis_frame ul").css("left",0);
+					});
+					state=false;
+				}
+			}
+			function prev(){
+				if(!state){
+					state=true;
+					$(".vis_frame ul").children("li:last").insertBefore($(".vis_frame ul").children("li:first"));
+					$(".vis_frame ul").css("left",-liWidth);
+					$(".vis_frame ul").stop().animate({left:0},spd);
+					state=false;
+				}
+			}
+			function stop(){
+				clearInterval(roll);
+			}
+			function play(){
+				
+			}
+
+
+			$(".next").click(function(){
+				next();
+			});
+
+			$(".prev").click(function(){
+				prev();
+			});
+
+			roll=setInterval(function(){
+				$(".next").click();
+			},2000);
+
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="vis_frame">
+			<ul>
+				<li class="first"><img src="img/lemon.jpg" alt="lemon"></li>
+				<li><img src="img/apple.jpg" alt="apple"></li>
+				<li><img src="img/lemon.jpg" alt="lemon"></li>
+				<li><img src="img/apple.jpg" alt="apple"></li>
+				<li><img src="img/squirrel.jpg" alt="squirrel"></li>
+			</ul>
+		</div>
+	</div>
+	<div class="btn">
+		<button class="prev">Prev</button>
+		<button class="next">Next</button>
+	</div>
+</body>
+</html>

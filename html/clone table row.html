@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		#wrap{width:1000px;margin:30px auto 0;}
+		table{width:100%;border-collapse:collapse;}
+		table caption{display:none;}
+		table td{padding:10px 0;border:1px solid #ccc;text-align:center;}
+		table td button{border:1px solid #333;border-radius:3px;padding:3px 5px;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			function rowclone(target){
+				var row=$(target).parents("tr").clone();
+				$(target).parents("tbody").append(row);
+			}
+			function rowremove(target){
+				$(target).parents("tr").remove();
+			}
+		});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<table>
+		<caption>123</caption>
+		<colgroup>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<td>
+					<button onclick="rowclone();">복제</button>
+				</td>
+				<td>
+					<button onclick="rowremove();">삭제</button>
+				</td>
+				<td>List01</td>
+				<td>List02</td>
+				<td>List03</td>
+				<td>List04</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+</body>
+</html>

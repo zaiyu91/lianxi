@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		.film{position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.3);}
+		#wrap{overflow:hidden;position:relative;width:100%;min-width:320px;max-width:1200px;margin:30px auto 0;}
+		#wrap > div{height:700px;border:1px solid #333;}
+
+		
+		nav{position:absolute;top:1px;z-index:20;}
+		nav > div{border-left:1px solid #56c22b;}
+		nav > div > strong{display:block;padding:5px 0;font-size:1.16em;text-align:center;background-color:#56c22b;}
+		nav > div > ul > li > a{display:block;padding:5px 20px;border-bottom:1px solid #56c22b;text-align:center;background-color:#fff;}
+
+		.open{margin:5px;border:1px solid #fff;background-color:#fff;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			var gnbWidth=$("nav").outerWidth();
+			var state=false;
+
+			$("nav").css("right",gnbWidth*-1);
+
+			$(".open").click(function(){
+				if(!state){
+					$("body").prepend("<div class='film'></div>");
+					$(this).text("닫기");
+					$("nav").stop().animate({right:1},800);
+					state=true;
+				}else{
+					$(".film").remove();
+					$(this).text("메뉴");
+					$("nav").stop().animate({right:gnbWidth*-1},800);
+					state=false;
+				}
+				
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+
+			<nav>
+				<div>
+					<strong>전체 메뉴</strong>
+					<ul>
+						<li><a href="javascript:;">menu01</a></li>
+						<li><a href="javascript:;">menu02</a></li>
+						<li><a href="javascript:;">menu03</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<button class="open">메뉴</button>
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{overflow: hidden;}
+
+		#contentWrap{min-width: 320px;max-width: 1024px;overflow: hidden;}
+		#contentWrap #header,
+		#contentWrap #footer{height:50px;background-color:#d33;}
+		#contentWrap #content{height:500px;background-color:#ff0;}
+
+		#sideNav{position:fixed;top:0;right:0;width:0;height:100%;background-color:#222;z-index: 1;overflow:hidden;}
+		#sideNav ul{padding-top:30px;position:relative;}
+		#sideNav ul li:first-child{position:absolute;top:5px;left:5px;}
+		#sideNav ul li a{display:block;padding:5px 10px;color:#fff;font-size:15px;font-weight:bold;transition:0.3s;}
+		#sideNav ul li a:hover,
+		#sideNav ul li a:active,
+		#sideNav ul li a:focus{color:#d33;background-color:#fff;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var wid=100;
+			var spd=500;
+			$(".open").click(function(){
+				$("#contentWrap").stop().animate({marginLeft:wid*-1},spd);
+				$("#sideNav").stop().animate({width:wid},spd);
+			});
+			$(".close").click(function(){
+				$("#contentWrap").stop().animate({marginLeft:0},spd);
+				$("#sideNav").stop().animate({width:0},spd);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="contentWrap">
+			<div id="header">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa harum maiores repellat minima illo laudantium ducimus cumque facere ullam, facilis asperiores, dolore beatae libero doloribus tempora, architecto quo. Reprehenderit, omnis.</div>
+			<div id="content">
+				<button class="open">open</button>
+			</div>
+			<div id="footer"></div>
+		</div>
+		<div id="sideNav">
+			<ul>
+				<li><a href="javascript:;" class="close">close</a></li>
+				<li><a href="javascript:;">menu01</a></li>
+				<li><a href="javascript:;">menu02</a></li>
+				<li><a href="javascript:;">menu03</a></li>
+				<li><a href="javascript:;">menu04</a></li>
+				<li><a href="javascript:;">menu05</a></li>
+				<li><a href="javascript:;">menu06</a></li>
+				<li><a href="javascript:;">menu07</a></li>
+				<li><a href="javascript:;">menu08</a></li>
+				<li><a href="javascript:;">menu09</a></li>
+				<li><a href="javascript:;">menu10</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

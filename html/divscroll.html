@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="../PTMChameleon.js"></script>
+    <!-- <script src="http://192.168.1.42/hana/Printmade3.js"></script>
+    <script src="http://192.168.1.42/hana/PDonut.js"></script> -->
+    <script type="text/javascript">
+      window.addEventListener('load',function(){
+        document.querySelector("#dltlsdn").addEventListener("keyup", function(event){
+          if(event.which==13){
+            // document.querySelector("#dltlsdn")
+          }
+        });
+        var div1 = document.createElement('div');
+        var div2 = document.createElement('div');
+        div1.innerText = document.querySelector('#dltlsdn2').value.split("\n")[0];
+        div2.innerText = document.querySelector('#dltlsdn2').value.split("\n")[1];
+        document.body.appendChild(div1);
+        document.body.appendChild(div2);
+      })
+    </script>
+  </head>
+  <body>
+    <div id="kind">
+      serviceWorker
+    </div>
+    <input type="button" name="name" value="print" onclick="PTMPrintWebPage({});">
+    <input type="radio" name="chk_info" value="HTML">HTML
+    <input type="radio" name="chk_info" value="CSS">CSS
+    <input type="radio" name="chk_info" value="웹디자인">웹디자인
+    <br/>
+    <input type="radio" name="info" value="1">1
+    <input type="radio" name="info" value="2">2
+    <input type="radio" name="info" value="3">3
+      <br/>
+    <input id="dltlsdn"type="edit" name="chk_info" value="웹디자인" multiple=style="height:400px;">
+      <br/>
+      <textarea id="dltlsdn2" rows="4" cols="50">
+ dltlsdn1
+ dltlsdn2
+</textarea>
+<br/>
+    <select class="" name="">
+      <option value="">직업선택</option>
+      <option value="학생">학생</option>
+      <option value="회사원">회사원</option>
+      <option value="기타">기타</option>
+    </select>
+    <br/>
+    <input type="checkbox" name="chk_info" value="HTML">HTML
+    <input type="checkbox" name="chk_info" value="CSS">CSS
+    <input type="checkbox" name="chk_info" value="웹디자인">웹디자인
+    <div id="scrollDiv" style="height:220px;overflow-x:hidden;overflow-y:auto;">
+      <table style="width:100%;height:100%;">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tfoot>
+         <tr>
+            <td>Sum</td>
+            <td>$180</td>
+         </tr>
+        </tfoot>
+         <tbody>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+           <tr>
+              <td>January</td>
+              <td>$100</td>
+           </tr>
+           <tr>
+              <td>February</td>
+              <td>$80</td>
+           </tr>
+          </tbody>
+      </table>
+    </div>
+  </body>
+</html>

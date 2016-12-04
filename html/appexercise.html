@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>TEST</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-1.12.4.js"></script>
+
+	<style type="text/css">
+		#contentWrap{width:100%;min-width:320px;max-width:1024px;margin:0 auto;}
+
+		/*table 공통*/
+		caption{visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+		th,td{padding:2.33% 0;border:1px solid #ccc;font-size:1.16em;}
+
+		/*table tbody tr:first-child > *:first-child{border-radius:10px 0 0 0;}
+		table tbody tr:first-child > *:last-child{border-radius:0 10px 0 0;}
+		table tbody tr:last-child > *:first-child{border-radius:0 0 0 10px;}
+		table tbody tr:last-child > *:last-child{border-radius:0 0 10px 0;}*/
+
+		/*form 공통*/
+		legend{width:1px;height:1px;line-height:0;text-indent:-999999%;overflow:hidden;position:absolute;left:-99999%;}
+
+		/*타이틀*/
+		#title > div{padding:3.12% 0;font-size:1.25em;font-weight:bold;text-align:center;}
+
+		/*검색창*/
+		#searchBox{background:url("img/appbg.png") 0 0;background-size:100%;}
+		#searchBox > div:first-child{padding:3.12% 0;}
+		#searchBox > div:first-child > div{width:62.5%;min-width:200px;padding:1.56% 0;margin:0 auto;border-radius:5px;text-align:center;background:rgba(0,0,0,0.2);}
+		#searchBox > div:first-child > div input{appearance:none;-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;-o-appearance:none;border-radius:3px;border:1px solid #ccc;vertical-align:middle;}
+		#searchBox > div:first-child > div input[type=text]{min-width:130px;width:75%;height:26px;line-height:normal;margin-right:3.12%;text-indent:10px;}
+		#searchBox > div:first-child > div input[type=image]{width:28px;height:28px;border:none;}
+
+		/*검색 결과*/
+		#searchResult > div{padding:1.56% 0;}
+		#searchResult > div p{text-align:center;color:#ccc;}
+		#searchResult > div p span{color:#da3737;font-weight:bold;}
+
+		/*테이블 탭 메뉴*/
+		.tab_menu > div{padding:1.56% 0;}
+		.tab_menu ul{overflow:hidden;border-top:1px solid #ccc;}
+		.tab_menu ul li{float:left;width:25%;}
+		.tab_menu ul li a{display:block;padding:3.90% 0;border-right:1px solid #ccc;border-bottom:1px solid #ccc;font-size:1.16em;text-align:center;}
+		.tab_menu ul li:last-child a{border-right:none;}
+		.tab_menu ul li a:hover,
+		.tab_menu ul li a:active,
+		.tab_menu ul li a:focus,
+		.tab_menu ul li a.on{color:#fff;background-color:#333;}
+
+		/*table01*/
+		#table01 > div{padding:0 1.56%;}
+		#table01 > div > table{width:100%;border-collapse:collapse;}
+		#table01 > div > table td{text-align:center;}
+
+		/*tablelist*/
+		.table_list > div > table{display:none;}
+		.table_list > div > table.on{display:table;}
+		.table_list > div > table:nth-child(1) th{background:rgba(45,61,95,0.4);color:#333;}
+		.table_list > div > table:nth-child(2) th{background:rgba(45,61,95,0.5);color:#333;}
+		.table_list > div > table:nth-child(3) th{background:rgba(45,61,95,0.7);color:#fff;}
+		.table_list > div > table:nth-child(4) th{background:rgba(45,61,95,1);color:#fff;}
+
+		@media all and (min-width:768px){
+			body{font-size:15px;}
+		}
+	</style>
+</head>
+<body>
+	<section id="contentWrap">
+
+		<div id="title">
+			<div>
+				<strong>Titlebox</strong>
+			</div>
+		</div>
+		<!-- // #title -->
+
+		<div id="searchBox">
+			<div>
+				<div>
+					<form action="#">
+						<fieldset>
+							<legend>검색창</legend>
+							<input type="text" placeholder="검색어를 입력하세요"
+						    ><input type="image" src="img/search_icon.png" alt="검색">
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+			<div id="searchResult">
+				<div>
+					<p>총 <span>4</span>건이 조회됐습니다.</p>
+				</div>
+			</div>
+		</div>
+		<!-- // #searchBox -->
+
+		
+
+		<div id="content">
+			<div>
+
+				<div class="tab_menu">
+					<div>
+						<ul>
+							<li><a href="javascript:;">table01</a></li>
+							<li><a href="javascript:;">table02</a></li>
+							<li><a href="javascript:;">table03</a></li>
+							<li><a href="javascript:;">table04</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="table01" class="table_list">
+
+					<div>
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%">
+								<col style="width:55%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Table01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table01</th>
+									<td>Information</td>
+								</tr>
+						
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%">
+								<col style="width:55%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Table02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table02</th>
+									<td>Information</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%">
+								<col style="width:55%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Table03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table03</th>
+									<td>Information</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%">
+								<col style="width:55%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Table04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Table04</th>
+									<td>Information</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+				<!-- // #table01 -->
+
+			</div>
+		</div>
+		<!-- // #content -->
+
+	</section>
+	<!-- // #contentWrap -->
+
+	<script type="text/javascript">
+		$(function(){
+
+			// 탭 메뉴 클릭 이벤트
+			var Li=$(".tab_menu li");
+			var liIndex;
+
+			Li.click(function(){
+				liIndex=$(this).index();
+				$(".tab_menu li a.on").removeClass("on");
+				$(".tab_menu li").eq(liIndex).children("a").addClass("on");
+
+				if($(".table_list > div > table:visible").index() != liIndex){
+					$(".table_list > div > table.on").removeClass("on");
+					$(".table_list > div > table").eq(liIndex).addClass("on");
+				}
+
+			});
+
+			Li.eq(0).click();
+			//// 탭 메뉴 클릭 이벤트
+
+			// 검색 결과 슬라이드 이벤트
+			$("#searchResult").hide(); // 가리고 시작
+			var show=false; // #searchResult가 hide일 때 이벤트를 발생시키기 위한 판단변수 생성
+			var spd=600; // 슬라이드 다운 이벤트 스피드
+
+			$("#searchBox form").submit(function(){
+				if(!show){
+					$("#searchResult").slideDown(spd,"swing");
+					show=true;
+				}
+				return false;
+			});
+			//// 검색 결과 슬라이드 이벤트
+
+		});
+
+
+		$("#title strong").text($(window).width()+"px");
+		$(window).resize(function(){
+			$("#title strong").text($(window).width()+"px");
+		});
+	</script>
+</body>
+</html>

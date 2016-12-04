@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:66.66666666666667%;border:3px solid #d33;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			function open(){
+				var child=window.open("popup exer_2.html","popup exercise","width=800,height:500");
+			}
+			$(".open").click(function(){
+				open()
+				$(".close").click(function(){
+				child.close();
+				});
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<button class="open">open</button>
+		<button class="close">close</button>
+	</div>
+</body>
+</html>

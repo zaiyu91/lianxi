@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:1000px;margin:20px auto 0;padding:10px;border:3px solid #222;background-color:#d33;}
+		
+		#frame{position:relative;background-color:#fff;width:1000px;height:150px;overflow:hidden;}
+		ul{position:absolute;top:0;height:150px;}
+		ul li{float:left;width:1000px;height:150px;text-align:center;line-height:150px;font-size:50px;font-weight:bold;}
+		.li01{background-color:#0F8B43;}
+		.li02{background-color:#80BB31;}
+		.li03{background-color:#F2EC1E;}
+		.li04{background-color:#243679;}
+		.li05{background-color:#01BAF2;}
+		
+		#btn{overflow:hidden;width:1000px;margin:20px auto 0;text-align:center;}
+		#btn button{border:1px solid #222;width:50px;height:20px;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var liLength=$("ul li").length;
+			var liWidth=$("ul li").innerWidth();
+			$("ul").width(liWidth*liLength);
+			var state=false;
+			var roll; //setInterval
+			var spd=1500;
+			var easing="easeInCubic";
+
+
+			function prev(){
+				if(!state){
+					state=true;
+					$("ul").stop().animate({left:liWidth*-1},spd,easing,function(){
+						$("ul").children("li:first").insertAfter($("ul").children("li:last"));
+						$("ul").css("left",0);
+						state=false;
+					});
+				}
+			}
+			function next(){
+				if(!state){
+					state=true;
+					$("ul").children("li:last").insertBefore($("ul").children("li:first"));
+					$("ul").css("left",liWidth*-1);
+					$("ul").stop().animate({left:0},spd,easing,function(){
+						state=false;
+					});
+					
+				}
+			}
+			function bannerSlide(){
+				var state02=false;
+				if(!state02){
+					$(".play_stop").text("STOP");
+					roll=setInterval(function(){
+						$(".prev").click();
+					},3000);
+					state02=true;
+				}else{
+					$(".play_stop").text("PLAY");
+					clearInterval(roll);
+					state02=false;
+				}
+			}
+
+			$(".prev").click(function(){
+				prev();
+			});
+			$(".next").click(function(){
+				next();
+			});
+			$(".play_stop").click(bannerSlide());
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="frame">
+			<ul>
+				<li class="li01">1</li>
+				<li class="li02">2</li>
+				<li class="li03">3</li>
+				<li class="li04">4</li>
+				<li class="li05">5</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="btn">
+		<button class="prev"><<</button>
+		<button class="play_stop">PLAY</button>
+		<button class="next">>></button>
+	</div>
+</body>
+</html>

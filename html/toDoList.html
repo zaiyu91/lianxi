@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		/* reset */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}
+		fieldset,img{border:none;}
+		dl,ul,ol,menu,li{list-style:none;}
+		blockquote, q{quotes: none;}
+		blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;}
+		input,select,textarea,button{vertical-align:middle;}
+		button{border:none;background-color:transparent;cursor:pointer;}
+		body{background:#fff;}
+		body,th,td,input,select,textarea,button{font-size:14px;line-height:1; font-family:'맑은 고딕','돋움',dotum,sans-serif;color:#333;font-weight:normal; }
+		a{color:#333;text-decoration:none;}
+		a:active, a:hover{text-decoration:none;}
+		address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
+		img{vertical-align:top;}
+
+		/*style*/
+		#searchBox{margin-bottom:30px;background-color:#117694;}
+		#searchBox > div{width:1200px;margin:0 auto;padding:100px 0;text-align:center;}
+		#searchBox > div > #search{width:500px;height:50px;line-height:50px;margin-right:10px;font-size:18px;text-indent:10px;border:0;border-radius:5px;}
+		#searchBox > div > #addBtn{width:100px;height:50px;border:0;border-radius:5px;font-weight:bold;background-color:#fff;transition:all 0.3s;}
+		#searchBox > div > #addBtn:active{transform:translate(5px, 5px);color:#fff;background-color:#117694;}
+
+		#list > div{width:1200px;margin:0 auto;}
+		#list > div > ul > li:first-child{margin-bottom:5px;}
+		#list > div > ul > li > div{overflow:hidden;background-color:#f0f0f0;}
+		#list > div > ul > li:first-child > div{background-color:#666;}
+		#list > div > ul > li:first-child > div > div:last-child{color:#fff;}
+		#list > div > ul > li > div > div{float:left;padding:20px 0;font-size:20px;font-weight:bold;}
+		#list > div > ul > li > div > div:first-child{width:99px;border-right:1px solid #ccc;text-align:center;}
+		#list > div > ul > li > div > div:last-child{width:1080px;padding-left:20px;}
+
+		#btn > div{padding:30px 0;text-align:center;}
+		#btn .delete{width:100px;height:50px;border:1px solid #333;border-radius:5px;color:#333;font-weight:bold;}
+
+		/*placeholder*/
+		::-webkit-input-placeholder{color:#999;font-size:1em;}
+		:-moz-placeholder{color:#999;opacity:1;} /* Mozilla Firefox 4 to 18 */
+		::-moz-placeholder{color:#999;opacity:1;} /* Mozilla Firefox 19+ */
+		:-ms-input-placeholder{color:#999;} /* Internet Explorer 10-11 */
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			//항목 추가
+			function addList(){
+				var todoList=$("#search").val();
+				if($("#search").val() == ""){
+					alert("할 일을 입력하세요");
+				}else{
+					$("#list > div > ul").append("<li><div><div><input type='checkbox'></div><div></div></div></li>")
+					$("#list > div > ul > li:last > div > div:last").text(todoList);
+					$("#search").val("");
+				}
+			}
+
+			//전체 체크
+			function allCheck(){
+				if($("#allCheck").prop("checked")){
+					$("#list :checkbox").prop("checked",true);
+				}else{
+					$("#list :checkbox").prop("checked",false);
+				}
+			}
+
+			//항목 삭제 후 체크 풀기
+			function listDelete(){
+				$("#list :checked").not("#allCheck").parents("li").remove();
+				$("#allCheck").prop("checked",false);
+			}
+
+			//search enter
+			$("#search").keydown(function(event){
+				if(event.keyCode == 13){
+					$("#addBtn").click();
+				}
+			});
+
+			$("#addBtn").click(addList);
+			$("#allCheck").click(allCheck);
+			$(".delete").click(listDelete);
+		});
+	</script>
+</head>
+<body>
+<div id="wrap">
+	<div>
+		
+		<div id="searchBox">
+			<div>
+				<input type="text" id="search" placeholder="할 일을 추가하세요"><input type="button" value="추가" id="addBtn">
+			</div>
+		</div>
+
+		<div id="list">
+			<div>
+
+				<ul>
+					<li>
+						<div>
+							<div>
+								<input type="checkbox" id="allCheck">
+							</div>
+							<div>
+								To do
+							</div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<div>
+								<input type="checkbox">
+							</div>
+							<div>
+								asdasd
+							</div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<div>
+								<input type="checkbox">
+							</div>
+							<div>
+								asdasd
+							</div>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div id="btn">
+			<div>
+				<button class="delete">선택 삭제</button>
+			</div>
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

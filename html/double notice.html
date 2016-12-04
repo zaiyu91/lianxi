@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Double Notice</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		*:focus{
+			outline:3px solid #a6c8ff;
+			-moz-outline-radius:5px;
+			-webkit-outline-radius:5px;
+			-o-outline-radius:5px;
+			-ms-outline-radius:5px;
+		}
+		#wrap{width:960px;margin:30px auto 0;padding:20px;overflow:hidden;border:2px solid #222;}
+
+		#wrap > div{position:relative;width:460px;}
+		#wrap > div > strong{display:block;font-size:20px;padding:0 0 10px;border-bottom:2px solid #333;}
+		#wrap > div > a{position:absolute;right:5px;top:5px;font-size:14px;font-weight:bold;}
+		#wrap > div > ul{padding:5px 0;}
+		#wrap > div > ul > li{padding:5px 3px;}
+		#wrap > div > ul > li:after{content:"";display:block;clear:both;}
+		#wrap > div > ul > li > a{float:left;display:block;width:80%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;line-height:18px;}
+		#wrap > div > ul > li > span{float:right;font-size:14px;line-height:18px;}
+		#wrap .notice01{float:left;}
+		#wrap .notice02{float:right;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="notice01">
+			<strong>게시판01</strong>
+			<ul>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, sed!</a><span>2016-07-26</span></li>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, eligendi!</a><span>2016-07-26</span></li>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, accusantium!</a><span>2016-07-26</span></li>
+			</ul>
+			<a href="javascript:;">더 보기</a>
+		</div>
+		<div class="notice02">
+			<strong>게시판02</strong>
+			<ul>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, sint.</a><span>2016-07-26</span></li>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, magnam.</a><span>2016-07-26</span></li>
+				<li><a href="javascript:;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, unde.</a><span>2016-07-26</span></li>
+			</ul>
+			<a href="javascript:;">더 보기</a>
+		</div>	
+	</div>
+</body>
+</html>

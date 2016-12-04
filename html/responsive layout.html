@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{overflow:hidden;min-width:320px;width:62.5%;margin:20px auto 0;border:2px solid #222;background-color:#d33;}
+		.left{float:left;}
+		.right{float:right;}
+
+		#wrap > div{width:45%;padding:2.5%;background-color:#d33;}
+		#wrap > div > div{background-color:#fff;}
+
+		@media screen and (max-width:768px){
+			#wrap{width:100%;border:none;background-color:#ff0;}
+
+			#wrap > div{width:40%;padding:5%;background-color:#ff0;}
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#wrap > div > div").height($("#wrap > div > div").width()*0.1851851851851852);
+
+			$(window).resize(function(){
+				$("#wrap > div > div").height($("#wrap > div > div").width()*0.1851851851851852);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div class="left">
+			<div></div>
+		</div>
+		<div class="right">
+			<div></div>
+		</div>
+	</div>
+</body>
+</html>

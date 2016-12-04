@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		/* reset */
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}
+	fieldset,img{border:none;}
+	dl,ul,ol,menu,li{list-style:none;}
+	blockquote, q{quotes: none;}
+	blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;}
+	input,select,textarea,button{vertical-align:middle;}
+	button{border:none;background-color:transparent;cursor:pointer;}
+	body{background:#fff;}
+	body,th,td,input,select,textarea,button{font-size:14px;line-height:1; font-family:'맑은 고딕','돋움',dotum,sans-serif;color:#333;font-weight:normal; }
+	a{color:#333;text-decoration:none;}
+	a:active, a:hover{text-decoration:none;}
+	address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
+	img{vertical-align:top;}
+
+		#wrap > div{overflow:hidden;position:relative;width:1000px;height:800px;margin:30px auto 0;border:3px solid #333;}
+
+		nav{position:absolute;left:0;top:0;margin-left:-153px;}
+		nav ul{background:rgba(0,0,0,0.5);}
+		nav.navShow{animation:navShow 1s;animation-fill-mode:forwards;}
+		nav.navHide{animation:navHide 1s;animation-fill-mode:forwards;}
+		nav ul li a{display:block;width:150px;height:40px;line-height:40px;border-bottom:1px solid #fff;color:#fff;font-size:15px;font-weight:bold;text-align:center;background-color:#d33;transition:all 0.3s;}
+		nav ul li:last-child a{border-bottom:none;}
+		nav ul li a:hover{background-color:#fff;color:#d33;}
+		.on{position:absolute;right:10px;top:10px;padding:10px 20px;border:1px solid #333;}
+
+		@keyframes navShow{
+			from{margin-left:-153px;}
+			to{margin-left:0;}
+		}
+		@keyframes navHide{
+			from{margin-left:0;}
+			to{margin-left:-153px;}
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			$(".on").click(function(){
+				if(!$("nav").hasClass("navShow")){
+					$("nav").removeClass("navHide").addClass("navShow");
+				}else{
+					$("nav").removeClass("navShow").addClass("navHide");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div id="wrap">
+<div>
+	<nav>
+		<ul>
+			<li><a href="javascript:;">menu01</a></li>
+			<li><a href="javascript:;">menu02</a></li>
+			<li><a href="javascript:;">menu03</a></li>
+			<li><a href="javascript:;">menu04</a></li>
+			<li><a href="javascript:;">menu05</a></li>
+		</ul>
+	</nav>
+
+	<button class="on">Nav</button>
+</div>	
+</div>
+</body>
+</html>

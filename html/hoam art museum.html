@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		#wrap{width:1000px;margin:30px auto 0;}
+
+		#wrap > div{position:relative;}
+		#wrap > div > ul li{position:absolute;top:0;left:0;}
+		#wrap > div > ul li img{width:1000px;height:600px;}
+
+		.btn{position:absolute;right:10%;top:300px;z-index:10;}
+		.btn a{display:inline-block;padding:10px;border:1px solid #fff;border-radius:3px;color:#fff;transition:all 0.5s;}
+		.btn a.on,
+		.btn a:hover,
+		.btn a:active,
+		.btn a:focus{background-color:#fff;color:#000;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			$(".visual li").hide();
+			var index;
+			var spd=800;
+			var roll;
+
+			$(".btn a").click(function(){
+				index=$(this).index();
+
+				$(".btn a.on").removeClass("on");
+				$(this).addClass("on");
+
+				$(".visual li:visible").stop().fadeOut(spd);
+				$(".visual li").eq(index).stop().fadeIn(spd);
+			});
+
+			$(".btn a").eq(0).click();
+
+			function play(){
+				roll=setInterval(function(){
+					index++;
+					if(index >= $(".visual li").length){
+						index=0;
+					}
+					$(".btn a").eq(index).click();
+				},3000);
+			}
+
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+			<ul class="visual">
+				<li><img src="img/apple.jpg" alt=""></li>
+				<li><img src="img/lemon.jpg" alt=""></li>
+				<li><img src="img/squirrel.jpg" alt=""></li>
+			</ul>
+
+			<div class="btn">
+				<a href="javascript:;">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src='js/cookie.js'></script>
+	<script type="text/javascript">
+		  $(function(){
+            if($.cookie("popUp") != "yes"){
+                $("#pop").css("display","block");
+            }else{
+                $("#pop").css("display","none");   
+            }
+            function pop(){
+                $("#pop").css("display","none");
+                $.cookie("popUp","yes",{expires:1});
+            }
+            $("#close").click(pop);
+        });
+
+	</script>
+</head>
+<body>
+	<div id="pop">
+		<div class="txt">내용</div>
+		<div class="bt"><label for="close">닫기</label><input type="checkbox" id="close" /></div>
+    </div>
+</body>
+</html>

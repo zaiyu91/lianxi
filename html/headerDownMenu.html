@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		a{text-decoration:none;color:#666;}
+
+		#wrap{border-bottom:3px solid #666;margin-bottom:30px;}
+		#header{overflow:hidden;position:relative;width:1000px;margin:20px auto 0;}
+		#header > div{height:35px;padding:20px;}
+
+		#gnb{overflow:hidden;}
+		#gnb > li{float:left;width:20%;}
+		#gnb > li > a{display:block;margin:10px;padding:10px 0;border-radius:3px;color:#fff;font-size:14px;font-weight:bold;text-align:center;background-color:#4CAF50;transition:all 0.3s;}
+		#gnb > li > a:hover,
+		#gnb > li > a:active,
+		#gnb > li > a:focus{box-shadow:0 0 10px #000;}
+
+		#gnb > li > ul > li > a{display:block;margin:0 5px;padding:10px 0;font-size:15px;font-weight:bold;text-align:center;border-bottom:1px dashed #ccc;transition:all 0.3s;}
+		#gnb > li > ul > li:last-child > a{border-bottom:none;}
+		#gnb > li > ul > li > a:hover,
+		#gnb > li > ul > li > a:active,
+		#gnb > li > ul > li > a:focus{color:#fff;background-color:#666;}
+
+		.close{display:none;position:absolute;bottom:10px;right:40px;padding:5px 10px;border-radius:3px;color:#fff;background:#333;}
+
+		#content{width:1000px;height:500px;line-height:500px;margin:0 auto;font-size:50px;font-weight:bold;text-align:center;background:#DDFFDD;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var li=$("#gnb > li");
+			var spd=500;
+			
+			var headerHeight=$("#header").innerHeight();
+			var afterHeight=$("#gnb").height() + headerHeight;
+			var state=false;
+
+			li.click(function(){
+				if(!state){
+					$("#header").stop().animate({height:afterHeight},spd,"swing",function(){
+						$(".close").css("display","inline-block");
+					});
+					state=true;
+				}else{
+					$(".close").css("display","none");
+					$("#header").stop().animate({height:headerHeight},spd,"swing");
+					state=false;
+				}
+
+				$(this).children("ul").find("a").click(function(){
+					return false;
+				});
+			});
+
+			$(".close").click(function(){
+				$(this).css("display","none");
+				$("#header").stop().animate({height:headerHeight},spd,"swing");
+				state=false;
+				return false;
+			});
+
+			
+			
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div>
+				<ul id="gnb">
+					<li>
+						<a href="javascript:;">MENU01</a>
+						<ul>
+							<li><a href="javascript:;">메뉴01</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">MENU02</a>
+						<ul>
+							<li><a href="javascript:;">메뉴01</a></li>
+							<li><a href="javascript:;">메뉴02</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">MENU03</a>
+						<ul>
+							<li><a href="javascript:;">메뉴01</a></li>
+							<li><a href="javascript:;">메뉴02</a></li>
+							<li><a href="javascript:;">메뉴03</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">MENU04</a>
+						<ul>
+							<li><a href="javascript:;">메뉴01</a></li>
+							<li><a href="javascript:;">메뉴02</a></li>
+							<li><a href="javascript:;">메뉴03</a></li>
+							<li><a href="javascript:;">메뉴04</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">MENU05</a>
+						<ul>
+							<li><a href="javascript:;">메뉴01</a></li>
+							<li><a href="javascript:;">메뉴02</a></li>
+							<li><a href="javascript:;">메뉴03</a></li>
+							<li><a href="javascript:;">메뉴04</a></li>
+							<li><a href="javascript:;">메뉴05</a></li>
+							<li><a href="javascript:;">메뉴06</a></li>
+							<li><a href="javascript:;">메뉴07</a></li>
+							<li><a href="javascript:;">메뉴07</a></li>
+							<li><a href="javascript:;">메뉴07</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="javascript:;" class="close">
+					닫기
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="content">Content</div>
+</body>
+</html>

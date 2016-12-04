@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>progressbar</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#progressbar{width:500px;height:50px;border:3px solid #222;}
+	</style>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<script src="js/jquery-1.12.4.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+	  $(function() {
+	    var progressTimer,
+	      progressbar = $( "#progressbar" ),
+	      progressLabel = $( ".progress-label" ),
+	      dialogButtons = [{
+	        text: "Cancel Download",
+	        click: closeDownload
+	      }],
+	      dialog = $( "#dialog" ).dialog({
+	        autoOpen: false,
+	        closeOnEscape: false,
+	        resizable: false,
+	        buttons: dialogButtons,
+	        open: function() {
+	          progressTimer = setTimeout( progress, 2000 );
+	        },
+	        beforeClose: function() {
+	          downloadButton.button( "option", {
+	            disabled: false,
+	            label: "Start Download"
+	          });
+	        }
+	      }),
+	      downloadButton = $( "#downloadButton" )
+	        .button()
+	        .on( "click", function() {
+	          $( this ).button( "option", {
+	            disabled: true,
+	            label: "Downloading..."
+	          });
+	          dialog.dialog( "open" );
+	        });
+	 
+	    progressbar.progressbar({
+	      value: false,
+	      change: function() {
+	        progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+	      },
+	      complete: function() {
+	        progressLabel.text( "Complete!" );
+	        dialog.dialog( "option", "buttons", [{
+	          text: "Close",
+	          click: closeDownload
+	        }]);
+	        $(".ui-dialog button").last().focus();
+	      }
+	    });
+	 
+	    function progress() {
+	      var val = progressbar.progressbar( "value" ) || 0;
+	 
+	      progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+	 
+	      if ( val <= 99 ) {
+	        progressTimer = setTimeout( progress, 50 );
+	      }
+	    }
+	 
+	    function closeDownload() {
+	      clearTimeout( progressTimer );
+	      dialog
+	        .dialog( "option", "buttons", dialogButtons )
+	        .dialog( "close" );
+	      progressbar.progressbar( "value", false );
+	      progressLabel
+	        .text( "Starting download..." );
+	      downloadButton.focus();
+	    }
+	  });
+	  </script>
+</head>
+<body>
+
+	<div id="dialog" title="File Download">
+		<div class="progress-label">Starting download...</div>
+		<div id="progressbar"></div>
+	</div>
+	
+	<button id="downloadButton">Start Download</button>
+</body>
+</html>

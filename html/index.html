@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script>
+	    	function lotto(n){
+			var numArray=new Array();
+			var cnumber=0;
+			var temp="";
+			function lottoLoop(){
+	               	var comArray=new Array();
+	               	for(var i=0;i<6;i++){
+	                    	cnumber=Math.floor(Math.random()*45+1);
+	                    	var check=true;
+                   		for(var j=0;j<comArray.length;j++){
+                        		if(cnumber==comArray[j]){
+                           			i -= 1;
+                        			check=false;
+                       			}//if cnumber//
+                   		}//for j//
+	                    	if(check==true){
+	                   		comArray[i]=cnumber;
+	                   	}//if check//
+	               	}//for i//
+				return comArray.sort(function(a,b){return a -b;});
+			}//lottoLoop//
+			for(var k=0;k<n;k++){
+				numArray[k]=lottoLoop();
+				temp+=(k+1)+"번째 "+numArray[k]+"<br>";
+			}//for//
+			return temp;
+		}//lotto//
+		document.write(lotto(prompt("횟수 입력","")));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

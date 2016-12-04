@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:80%;min-width:320px;margin:0 auto;}
+		.com{height:60px;min-height:40px;max-height:60px;background-color:#d33;}
+
+		#content ul{overflow:hidden;background-color:#333;padding:1%;}
+		#content ul li{float:left;width:29.33333333333333%;margin:1%;padding:1%;text-align:center;font-size:20px;font-weight:900;color:#fff;}
+		#content ul li:nth-child(2n){background-color:#1A4799;}
+		#content ul li:nth-child(2n+1){background-color:#F9EF47;color:#222;}
+
+		@media screen and (max-width:736px){
+			#wrap{width:100%;margin:none;}
+
+			#content ul li{float:left;width:46%;}
+			#content ul li:last-child{float:none;clear:both;width:calc(96% - 6px);background-color:#126433;border:3px solid #fff;}
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(window).resize(function(){
+				$(".com").height($(this).innerWidth()*0.0395778364116095);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+			<div class="com"></div>
+			<div id="content">
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+				</ul>
+			</div>
+			<div class="com"></div>
+		</div>
+	</div>
+</body>
+</html>

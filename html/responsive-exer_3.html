@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		a{display:block;text-decoration:none;color:#fff;}
+		#wrap{width:100%;min-width:320px;}
+
+		#top{overflow:hidden;width:80%;margin:0 auto;}
+		#top li{float:left;width:24%;height:50px;line-height:50px;margin:0 1% 1% 0;background-color:#d33;color:#fff;text-align:center;font-weight:bold;font-size:15px;}
+		#top li:last-child{margin-right:0;}
+
+		#imgWrap{overflow:hidden;width:80%;margin:1% auto 0;}
+		#imgWrap li{float:left;width:32.33%;margin: 0 1% 1% 0;}
+		#imgWrap li:last-child{margin-right:0;}
+		#imgWrap li img{width:100%;}
+
+		@media screen and (max-width:736px){
+			#top{width:100%;margin:none;}
+			#top li{width:49%;margin:0 2% 1% 0;}
+			#top li:first-child + li,
+			#top li:last-child{margin-right:0;}
+
+			#imgWrap{overflow:visible;width:100%;margin:none;}
+			#imgWrap li{float:none;width:100%;margin: 0 0 1% 0;}
+			#imgWrap li:last-child{margin-right:0;}
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<ul id="top">
+			<li><a href="javascript:;">Top01</a></li>
+			<li><a href="javascript:;">Top02</a></li>
+			<li><a href="javascript:;">Top03</a></li>
+			<li><a href="javascript:;">Top04</a></li>
+		</ul>
+		<ul id="imgWrap">
+			<li><img src="img/apple.jpg" alt="apple"></li>
+			<li><img src="img/lemon.jpg" alt="lemon"></li>
+			<li><img src="img/apple.jpg" alt="apple"></li>
+			<li><img src="img/lemon.jpg" alt="lemon"></li>
+			<li><img src="img/apple.jpg" alt="apple"></li>
+			<li><img src="img/lemon.jpg" alt="lemon"></li>
+		</ul>
+	</div>
+</body>
+</html>

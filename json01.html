@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+
+</head>
+<body>
+	<div id="wrap">
+		
+	</div>
+
+<script type="text/javascript">
+	var text='{"name":"zaiyu","address":"xinlin","age":"26"}';
+	var textObj=JSON.parse(text);
+
+	document.getElementById("wrap").innerHTML=textObj.name+"<br>"+textObj.address+"<br>"+textObj.age;
+</script>
+</body>
+</html>

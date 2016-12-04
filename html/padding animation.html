@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:300px;margin:30px auto 0;border:3px solid #333;text-align:center;}
+		#wrap  span{height:10px;background-color:#d33;}
+		#wrap > div{margin-bottom:20px;}		
+		#wrap > button{font-size:15px;font-weight:bold;margin-bottom:10px;border:1px solid #ccc;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".cl").click(function(){
+				$("#wrap span").animate({
+					"padding":"0 50%"
+				},1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+			<span class="pd"></span>
+		</div>
+		<button class="cl">CLICK</button>
+	</div>
+</body>
+</html>

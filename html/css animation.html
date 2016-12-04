@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style>
+		*{margin:0;padding:0;}
+
+		#allWrap{background:#123;}
+		#wrap{overflow:hidden;width:1000px;margin:20px auto 0;padding:20px;background:#333;font-family:'맑은 고딕';}
+		#wrap .txt{float:right;overflow:hidden;width:500px;padding:30px 0;}
+		#wrap .txt p{
+			width:500px;
+			font-size:13px;
+			font-weight:bold;
+			color:#fff;
+			position:relative;
+			top:0;
+			right:-500px;
+		}
+
+
+
+
+		@keyframes txtShow01{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.6;}
+			100%{right:0;opacity:1;}
+		}
+		@keyframes txtShow02{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.5;}
+			100%{right:0;opacity:1;}
+		}
+		@keyframes txtShow03{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.5;}
+			100%{right:0;opacity:1;}
+		}
+		@-webkit-keyframes txtShow01{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.6;}
+			100%{right:0;opacity:1;}
+		}
+		@-webkit-keyframes txtShow02{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.5;}
+			100%{right:0;opacity:1;}
+		}
+		@-webkit-keyframes txtShow03{
+			0%{right:-500px;opacity:0;}
+			75%{opacity:0.5;}
+			100%{right:0;opacity:1;}
+		}
+
+
+		#wrap .txt p:first-child{
+			animation-name:txtShow01;
+			animation-duration:2.5s;
+			animation-fill-mode:forwards;
+			-webkit-animation-name:txtShow01;
+			-webkit-animation-duration:3s;
+			-webkit-animation-fill-mode:forwards;
+		}
+		#wrap .txt p:nth-child(2){
+			font-size:20px;
+			padding:20px 0;
+			text-shadow:2px 2px #666;
+			animation-name:txtShow02;
+			animation-duration:2.5s;
+			animation-delay: 0.3s;
+			animation-fill-mode:forwards;
+			-webkit-animation-name:txtShow02;
+			-webkit-animation-duration:3s;
+			-webkit-animation-delay: 0.3s;
+			-webkit-animation-fill-mode:forwards;
+		}
+		#wrap .txt p:last-child{
+			font-size:15px;
+			animation-name:txtShow03;
+			animation-duration:2.5s;
+			animation-delay: 0.6s;
+			animation-fill-mode:forwards;
+			-webkit-animation-name:txtShow03;
+			-webkit-animation-duration:3s;
+			-webkit-animation-delay: 0.6s;
+			-webkit-animation-fill-mode:forwards;
+		}
+	</style>
+</head>
+<body>
+	<div id="allWrap">
+		<div id="wrap">
+			<div class="txt">
+				<p>first first first first first first first first </p>
+				<p>second second second second second second </p>
+				<p>third third third third third third third </p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

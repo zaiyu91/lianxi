@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		#wrap{width:1000px;margin:0 auto;}
+		#wrap:before{content:"asd";display:block;}
+		#wrap > div{height:30px;background-color:#d33;}
+		#wrap > div:first-child{margin-bottom:30px;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			// $("#wrap::before").css("height",100+"px");
+			$("#wrap").first().height(100);
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div></div>
+		<div></div>
+	</div>
+</body>
+</html>

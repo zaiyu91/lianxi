@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		/*header*/
+		header{background-color:#00a651;border-bottom:3px solid #ccc;}
+		header > div{width:100%;min-width:320px;max-width:1200px;margin:0 auto;}
+		header > div > div{padding:0 1.66%;} /*pd 1200.20*/
+		header > div > div:after{content:'';display:block;clear:both;}
+
+		#loginMenu{float:right;}
+		#loginMenu > ul{overflow:hidden;}
+		#loginMenu > ul > li{float:left;}
+		#loginMenu > ul > li > a{display:block;width:80px;height:40px;line-height:40px;font-size:14px;color:#fff;text-align:center;transition:all 0.4s;}
+		#loginMenu > ul > li > a:hover,
+		#loginMenu > ul > li > a:active,
+		#loginMenu > ul > li > a:focus{font-weight:bold;color:#333;background-color:#fff;}
+
+		/*footer*/
+		footer{background-color:#00a651;}
+		footer > div{width:100%;min-width:320px;max-width:1200px;margin:0 auto;}
+		footer > div > div{padding:1.66%;} /*pd 1200.20*/
+		footer > div > div > p{font-size:15px;font-weight:bold;color:#fff;}
+
+		/*container*/
+		#container > div{width:100%;min-width:320px;max-width:1200px;margin:0 auto;}
+		#container > div > div{padding:1.66%;} /*pd 1200.20*/
+
+		#content{} /*w 1160*/
+		#content > div{overflow:hidden;width:98%;height:90px;padding:1%;margin-bottom:1.72%;border:1px solid #ccc;text-overflow:ellipsis;white-space:nowrap;background-color:#fff;} /*mg 1160.20*/
+		#content > div:nth-child(2n){font-size:14px;color:#fff;background-color:#333;}
+		#content > div.rotateAnimation{animation:rotateAnimation 0.5s forwards;}
+
+		@keyframes rotateAnimation{
+			to{border-color:#00a651;font-size:14px;color:#fff;background-color:#00a651;transform:rotate(1deg);}
+		}
+
+		/* 디바이스 해상도 320px ~ 767px */
+		@media all and (min-width:320px) and (max-width:767px){
+			#loginMenu > ul > li > a{width:60px;height:30px;line-height:30px;font-size:12px;}
+		}
+	</style>
+
+	<script src="js/jquery-1.12.4.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<header>
+		<div>
+			<div>
+				
+				<div id="loginMenu">
+					<ul>
+						<li><a href="javascript:;">홈페이지</a></li>
+						<li><a href="javascript:;">로그인</a></li>
+						<li><a href="javascript:;">마이페이지</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+	</header>
+
+	<section id="container">
+		<div>
+			<div>
+					
+				<div id="content">
+					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quam, maxime iure unde praesentium mollitia, esse perspiciatis officiis. Cumque consequatur est error minima voluptatem, delectus tenetur sunt, ratione nihil dolorum architecto voluptatibus autem dolore mollitia quibusdam temporibus repellat nesciunt facilis voluptates explicabo vero ipsam? Asperiores quidem rerum, illo dolorum vitae.</div>
+					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dicta, atque accusamus vel modi nisi ut ipsam, fugit recusandae aut nulla eaque. Cum odio quibusdam, reprehenderit neque laboriosam, culpa dignissimos natus necessitatibus eligendi ea voluptatem modi, maxime, eius dolorum dolore. Voluptatem doloremque, eveniet molestiae, fugiat deleniti a nam incidunt dolore!</div>
+					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero harum deserunt, inventore veritatis sit ea? Fugit harum dolor placeat neque sit nulla qui. Architecto, sapiente, accusamus! Id magni quibusdam, cumque distinctio tempore eos! Tempore mollitia similique, minus fuga error labore, soluta ea quos rerum ipsa, fugiat ullam quia earum eos?</div>
+					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod facere recusandae, veniam officiis repudiandae, necessitatibus non vitae expedita error, optio iusto a aperiam quos, voluptas et repellendus quo saepe autem sint. Voluptate officiis impedit, ducimus, natus numquam, assumenda voluptates ut quia ad nesciunt amet non, et quos temporibus rem quae.</div>
+					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eveniet cumque ipsa itaque, explicabo aspernatur nesciunt obcaecati ipsam qui maxime corrupti, quidem non laudantium praesentium sapiente soluta assumenda sequi dolorum sint natus animi repellendus? Eligendi quidem ad, obcaecati quo voluptatum dolores, natus exercitationem error eos, quae nihil beatae aliquam omnis.</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<div>
+			<div>
+				
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ea, molestiae nemo, dignissimos quod placeat sunt provident ipsum, expedita ratione nisi libero tempora doloremque possimus non qui voluptatem voluptatum hic.</p>
+
+			</div>
+		</div>
+	</footer>
+
+<script type="text/javascript">
+	// login tab height animation
+		var loginA = $("#loginMenu > ul > li > a");
+		var loginAheight = Number(loginA.css("height").replace("px",""));
+
+		$(window).resize(function(){
+			loginAheight = Number(loginA.css("height").replace("px",""));
+
+			if(loginA.attr("style")){
+				loginA.attr("style","");
+			}
+		});
+
+		function headerDown(){
+			var loginANewHeight = loginAheight + 10;
+
+			loginA.stop().animate({
+				height : loginANewHeight,
+				lineHeight : loginANewHeight
+			},0,"swing");
+		}
+		function headerUp(){
+			var loginAOriginHeight = loginAheight;
+
+			loginA.stop().animate({
+				height : loginAOriginHeight,
+				lineHeight : loginAOriginHeight
+			},0,"swing");
+		}
+
+		loginA.hover(headerDown, headerUp);
+	// login tab height animation end //
+
+	// rotateAnimation
+		var divObj = $("#content > div");
+
+		divObj.hover(function(){
+			$(this).addClass("rotateAnimation");
+		},function(){
+			$(".rotateAnimation").removeClass("rotateAnimation");
+		});
+	// div rotateAnimation end //
+</script>
+</body>
+</html>

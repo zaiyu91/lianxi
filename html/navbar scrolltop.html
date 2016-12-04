@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		#wrap{}
+		#wrap > div{}
+
+		header{background:url(img/office.jpg) no-repeat 0 0;background-size:100% 100%;}
+		header nav{position:fixed;width:100%;background:rgba(51,51,51,0.6);}
+		header nav > div{width:100%;min-width:320px;max-width:1200px;margin:0 auto;}
+		header nav > div > div{padding:0.83%;/*1200-10*/}
+		header nav > div > div:after{content:'';display:block;clear:both;}
+		header nav ul{float:right;width:33.33%;}
+		header nav ul li{float:left;width:33.33%;}
+		header nav ul li a{display:block;margin:0 1%;height:30px;line-height:30px;border:1px solid #fff;border-radius:5px;color:#333;background-color:#fff;font-size:1.07em;/*15px*/font-weight:bold;text-align:center;transition:all 0.3s;}
+		header nav ul li a:hover,
+		header nav ul li a:active,
+		header nav ul li a:focus{border:1px solid #fff;color:#fff;background:none;}
+		header nav .menu{display:none;}
+
+		#headSector{height:400px;}
+
+		@media all and (max-width:767px){
+
+			header nav > div > div{padding:1.30%;/*767-10*/text-align:right;}
+			header nav ul{display:none;}
+			header nav .menu{display:inline;}
+
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+
+			<header>
+				<nav>
+					<div>
+						<div>
+							<ul>
+								<li><a href="javascript:;">HOME</a></li>
+								<li><a href="javascript:;">ABOUT ME</a></li>
+								<li><a href="javascript:;">SKILL</a></li>
+							</ul>
+							<a href="javascript:;" class="menu">
+								<img src="img/menu_icon.png" alt="메뉴">
+							</a>
+						</div>
+					</div>
+				</nav>
+				<div id="headSector">
+					
+				</div>
+			</header>
+
+			<section>
+				
+			</section>
+
+		</div>
+	</div>
+</body>
+</html>

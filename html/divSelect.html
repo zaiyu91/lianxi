@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>div Select</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		a{text-decoration:none;color:#222;}
+
+		#wrap{width:500px;margin:0 auto;position:relative;}
+		#straightBox{float:left;width:200px;height:30px;padding:10px;border:2px solid #333;}
+		#straightBox .direct_go{display:block;width:100%;height:30px;line-height:30px;background-color:yellow;}
+
+		.go_btn{float:left;width:50px;height:54px;border:2px solid #333;margin-left:10px;cursor:pointer;}
+
+		
+		#straight{display:none;width:196px;padding:10px;border:2px solid #f00;position:absolute;left:0;}
+		#straight.on{display:block;}
+		#straight li a{display:block;padding:3px 0;border-bottom:1px dashed #f00;}
+		#straight li:last-child a{border:none;}
+		#straight li a:hover,
+		#straight li a:active,
+		#straight li a:focus{background-color:lightyellow;}
+
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="straightBox">
+			<a href="#" class="direct_go">사이트 바로가기</a>
+		</div>
+
+		<button class="go_btn" onclick="goSite();">go</button>
+		
+		<ul id="straight">
+			<li><a href="http://www.naver.com">Naver</a></li>
+			<li><a href="http://www.daum.net">Daum</a></li>
+			<li><a href="http://www.nagosoft.com">Nago</a></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		$("#straight").css("top",$("#straightBox").outerHeight()+10);
+		var state=false;
+
+		$(".direct_go").click(function(){
+			if(!state){
+				$("ul").addClass("on");
+				state=true;
+			}else{
+				$("ul").removeClass("on");
+				state=false;
+			}
+		});
+
+		// select 모양 박스 클릭 이벤트
+		var originA=$(".direct_go").text(), link, textA;
+		$("#straight a").click(function(){
+			link=$(this).attr("href");
+			textA=$(this).text();
+			$(".direct_go").text(textA);
+			return false;
+		});
+
+		// go 버튼 클릭 이벤트
+		function goSite(){
+			$(".go_btn").click(function(){
+				if($(".direct_go").text() == originA){
+					return false;
+				}else{
+					location.href=link;
+				}
+			});
+		}
+
+		$("#wrap").focusout(function(){
+			$("#straight").hide();
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		/* reset */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0;padding:0;}
+		fieldset,img{border:none;}
+		dl,ul,ol,menu,li{list-style:none;}
+		blockquote, q{quotes: none;}
+		blockquote:before, blockquote:after,q:before, q:after{content:'';content:none;}
+		input,select,textarea,button{vertical-align:middle;}
+		button{border:none;background-color:transparent;cursor:pointer;}
+		body{background:#fff;}
+		body,th,td,input,select,textarea,button{font-size:14px;line-height:1;font-family:'맑은 고딕','돋움',dotum,sans-serif;color:#333;font-weight:normal;}
+		a{color:#333;text-decoration:none;}
+		a:active, a:hover{text-decoration:none;}
+		address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal;}
+		img{vertical-align:top;}
+
+		#wrap{width:1000px;margin:auto;padding:100px 0;border:2px solid #333;text-align:center;}
+		#wrap > div{position:relative;}
+
+		.click{display:inline-block;height:30px;line-height:30px;padding:0 20px;color:#fff;font-size:15px;font-weight:bold;background-color:#000;border-radius:3px;cursor:pointer;}
+		.pop{position:absolute;top:-40px;left:50%;padding:10px 20px;border:1px solid #333;font-weight:bold;box-shadow:0 0 10px 0 rgba(0,0,0,0.3);opacity:0;}
+	</style>
+
+	<script type="text/javascript">
+		$(function(){
+			var popWidth=$(".pop").innerWidth();
+			var state=false;
+			$(".pop").css("margin-left",popWidth/2*-1);
+
+			$(".click").click(function(){
+				if(!state){
+					$(this).text("닫기");
+					$(".pop").stop().animate({
+						opacity:1,
+						marginTop:-10
+					},500,"swing");
+					state=true;
+				}else{
+					$(this).text("클릭");
+					$(".pop").stop().animate({
+						opacity:0,
+						marginTop:0
+					},500,"swing");
+					state=false;
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<div>
+
+			<span class="click">클릭</span>
+			<div class="pop">Lorem ipsum dolor.</div>
+		
+		</div>
+	</div>
+</body>
+</html>

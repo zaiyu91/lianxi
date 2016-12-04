@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		table{border-collapse:collapse;}
+		td{border:1px solid #ccc;padding:20px 0;text-align: center;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var index;
+
+			$("tr td span").click(function(){
+				index=$(this).parents("tr").index();
+				alert(index)
+			});
+		});
+	</script>
+</head>
+<body>
+	<table>
+		<colgroup>
+			<col style="width:100px">
+			<col style="width:100px">
+			<col style="width:100px">
+			<col style="width:100px">
+			<col style="width:100px">
+		</colgroup>
+		<tbody>
+			<tr>
+				<td><span>List01</span></td>
+				<td>List02</td>
+				<td>List03</td>
+				<td>List04</td>
+				<td>List05</td>
+			</tr>
+			<tr>
+				<td><span>List01</span></td>
+				<td>List02</td>
+				<td>List03</td>
+				<td>List04</td>
+				<td>List05</td>
+			</tr>
+			<tr>
+				<td><span>List01</span></td>
+				<td>List02</td>
+				<td>List03</td>
+				<td>List04</td>
+				<td>List05</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

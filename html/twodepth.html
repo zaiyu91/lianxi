@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		body{font-family:'Oswald';}
+		#wrap{width:500px;margin:20px auto;border:1px solid #ccc;}
+
+		#wrap > ul > li > a{display:block;padding:8px 0 8px 10px;font-size:20px;font-weight:bold;background-color:#ff0;}
+		#wrap > ul > li > ul{padding:8px 0;background-color:#d33;}
+		#wrap > ul > li > ul > li > a{display:block;padding:10px 0;font-size:14px;font-weight:bold;color:#fff;text-align:center;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var onedepth=$("#wrap > ul > li > a");
+			var twodepth=$("#wrap > ul > li > ul");
+			var index;
+			var nextIndex;
+
+			twodepth.hide();
+			onedepth.click(function(){
+				index=$("#wrap > ul > li > ul:visible").parent().index();
+				nextIndex=$(this).parent().index();
+				if(index != nextIndex){
+					twodepth.slideUp();
+					$(this).next().slideDown();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<ul>
+			<li>
+				<a href="javascript:;">OneDepth</a>
+				<ul>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">OneDepth</a>
+				<ul>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;">OneDepth</a>
+				<ul>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+					<li><a href="javascript:;">twoDepth</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

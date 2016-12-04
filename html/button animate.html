@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style type="text/css">
+		a{display:inline-block;width:100px;height:50px;line-height:50px;text-decoration:none;color:#333;text-align:center;border:2px solid #333;border-radius:10px;font-weight:bold;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="js/jquery.animate-colors.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".cl").hover(function(){
+				$(".cl").animate({
+					color:"#fff",
+					backgroundColor:"#333"
+				},500);
+			},function(){
+				$(".cl").animate({
+					color:"#333",
+					backgroundColor:"#fff"
+				},500);
+			});
+		});
+	</script>
+</head>
+<body>
+	<a href="javascript:;" class="cl">CLICK</a>
+</body>
+</html>

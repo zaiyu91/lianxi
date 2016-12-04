@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/datepicker.css">
+	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+	<script type="text/javascript" src="js/datepicker.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("input.date").attr("placeholder","날짜 입력");
+
+			if($("input.date").focus()){
+				$("input.date").datepicker("option","closeText","CC");
+				$("input.date").attr("placeholder","");
+			}
+
+			if($("input.date").blur()){
+				$("input.date").datepicker("hide");
+				if($("input.date").val() == ""){
+					$("input.date").attr("placeholder","날짜 입력");
+				}
+			}
+		});
+	</script>
+</head>
+<body>
+	<div><input type="text" class="date"></div>
+	<div><input type="text" class="date"></div>
+	<div><input type="text" class="date"></div>
+	<div><input type="text" class="date"></div>
+</body>
+</html>

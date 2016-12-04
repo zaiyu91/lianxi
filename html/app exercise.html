@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>练习</title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<style type="text/css">
+		#contentWrap{min-width:320px;max-width:1024px;margin:0 auto;}
+
+		/*table 공통*/
+		caption{width:1px;height:1px;line-height:0;text-indent:-999999%;overflow:hidden;position:absolute;left:-99999%;}
+		th,td{padding:2.33% 0;border:1px solid #333;font-size:1.16em;}
+
+		/*form 공통*/
+		legend{width:1px;height:1px;line-height:0;text-indent:-999999%;overflow:hidden;position:absolute;left:-99999%;}
+
+		/*타이틀*/
+		#title > div{padding:3.12% 0;font-size:1.25em;font-weight:bold;text-align:center;}
+
+		/*검색창*/
+		#searchBox > div{padding:3.12% 0;text-align:center;background:rgba(0,0,0,0.5);}
+		#searchBox > div input{
+			appearance:none;
+			-moz-appearance:none;
+			-webkit-appearance:none;
+			-ms-appearance:none;
+			-o-appearance:none;
+			border-radius:5px;
+			border:1px solid #ccc;vertical-align:middle;}
+		#searchBox > div input[type=text]{min-width:120px;width:43.75%;height:26px;line-height:26px;margin-right:3.12%;text-indent:10px;}
+		#searchBox > div input[type=submit]{min-width:50px;width:15.62%;height:28px;background-color:#F0F0F0;}
+
+		/*검색 결과*/
+		#searchResult > div{padding:1.56% 0;background-color:#ddd;}
+		#searchResult > div p{text-align:center;}
+		#searchResult > div p span{color:#d33;font-weight:bold;}
+
+		/*테이블 탭 메뉴*/
+		.tab_menu > div{padding:1.56% 0;}
+		.tab_menu ul{overflow:hidden;border-top:1px solid #333;}
+		.tab_menu ul li{float:left;width:25%;}
+		.tab_menu ul li a{display:block;padding:2.5% 0 3.12%;border-right:1px solid #333;border-bottom:1px solid #333;font-size:1.16em;text-align:center;}
+		.tab_menu ul li:last-child a{border-right:none;}
+		.tab_menu ul li a:hover,
+		.tab_menu ul li a:active,
+		.tab_menu ul li a:focus,
+		.tab_menu ul li a.on{color:#fff;background-color:#333;}
+
+		/*table01*/
+		#table01 > div{padding:0 3.12%;}
+		#table01 table{width:100%;border-collapse:collapse;}
+		#table01 table td{text-align:center;}
+
+		/*tablelist*/
+		.table_list table{display:none;}
+		.table_list table.on{display:table;}
+	</style>
+</head>
+<body>
+	<section id="contentWrap">
+
+		<div id="title">
+			<div>
+				<strong>Titlebox</strong>
+			</div>
+		</div>
+		<!-- // #title -->
+
+		<div id="searchBox">
+			<div>
+				<form action="#">
+					<fieldset>
+						<legend>검색창</legend>
+						<input type="text" placeholder="검색어를 입력하세요"><!-- 
+					--><input type="submit" value="검색">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<!-- // #searchBox -->
+
+		<div id="searchResult">
+			<div>
+				<p>총 <span>3</span>건이 조회됐습니다.</p>
+			</div>
+		</div>
+
+		<div id="content">
+			<div>
+
+				<div class="tab_menu">
+					<div>
+						<ul>
+							<li><a href="javascript:;">table01</a></li>
+							<li><a href="javascript:;">table02</a></li>
+							<li><a href="javascript:;">table03</a></li>
+							<li><a href="javascript:;">table04</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="table01" class="table_list">
+
+					<div>
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%;">
+								<col style="width:55%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Title01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title01</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title01</th>
+									<td>Information</td>
+								</tr>
+						
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%;">
+								<col style="width:55%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Title02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title02</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title02</th>
+									<td>Information</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%;">
+								<col style="width:55%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Title03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title03</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title03</th>
+									<td>Information</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						
+						<table>
+							<caption>가나다라</caption>
+							<colgroup>
+								<col style="width:45%;">
+								<col style="width:55%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">Title04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title04</th>
+									<td>Information</td>
+								</tr>
+								<tr>
+									<th scope="row">Title04</th>
+									<td>Information</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+				<!-- // #table01 -->
+
+			</div>
+		</div>
+		<!-- // #content -->
+
+	</section>
+	<!-- // #contentWrap -->
+
+	<script type="text/javascript">
+		$(function(){
+
+			// 탭 메뉴 클릭 이벤트
+			var Li=$(".tab_menu li");
+			var liIndex;
+
+			Li.click(function(){
+				liIndex=$(this).index();
+
+				if($(".table_list > div > table:visible").index() != liIndex){
+					$(".table_list > div > table.on").removeClass("on");
+					$(".table_list > div > table").eq(liIndex).addClass("on");
+				}
+
+			});
+
+			Li.eq(0).click();
+			//// 탭 메뉴 클릭 이벤트
+
+			// 검색 결과 슬라이드 이벤트
+			$("#searchResult").hide();
+			var show=false;
+			var spd=600;
+
+			$("#searchBox form").submit(function(){
+				if(!show){
+					$("#searchResult").slideDown(spd);
+					show=true;
+				}
+			});
+			//// 검색 결과 슬라이드 이벤트
+
+		});
+
+
+		$(window).resize(function(){
+			$("#title strong").text($(window).width()+"px");
+		});
+	</script>
+</body>
+</html>

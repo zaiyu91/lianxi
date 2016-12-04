@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Progressbar - Indeterminate Value</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#progressbar" ).progressbar({
+      value: false
+    });
+
+  } );
+  </script>
+  <style>
+  #progressbar .ui-progressbar-value {
+    background-color: #ccc;
+  }
+  </style>
+</head>
+<body>
+ 
+<div id="progressbar"></div>
+
+ 
+</body>
+</html>

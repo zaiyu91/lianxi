@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="css/reset.css">
+	<style type="text/css">
+		#wrap{width:62.5%;margin:0 auto;}
+		#wrap > div{padding:1.66%;text-align:justify;background-color: #d33;}
+		#wrap > div > div{background-color: #fff;}
+	
+		.open{border:1px solid #ccc;border-radius:10px;padding:5px 15px;}
+
+		#popWrap > div{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+		#popWrap > div.on{display:block;}
+		#popWrap .popup{width:50%;height:50%;margin:10% auto;padding:20px;border:3px solid #333;background:rgba(255,255,255,0.5);}
+		#popWrap .popup > div{position:relative;height:100%;}
+		#popWrap .popup > div > .close{position:absolute;top:-12px;right:-7px;cursor:pointer;}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			function popOpen(){
+				$("#popWrap > div").addClass("on");
+			}
+			function popClose(){
+				$("#popWrap > div").removeClass("on");
+			}
+
+			$(".open").click(function(){
+				popOpen();
+			});
+			$(".close").click(function(){
+				popClose();
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+
+		<div>
+
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi tempora sunt natus perferendis obcaecati culpa ad necessitatibus, totam nihil error nemo reiciendis velit excepturi veniam, quod molestias sed a expedita eligendi, autem fuga fugiat accusamus. Deleniti, ea nulla eum, ullam beatae itaque nisi. Id a iure sint deleniti repudiandae reiciendis iusto ullam sed deserunt ipsum, sit cum, aut beatae earum laborum praesentium placeat voluptates ea nulla! Voluptas sequi magni in asperiores optio rem quisquam consequuntur labore perferendis impedit vitae reprehenderit maxime, officiis harum unde minus, aut deleniti ipsam repellat animi minima, iure ipsum, doloremque ex. Facilis doloribus ipsa sapiente veritatis?
+				
+				<button class="open">open pop</button>
+				
+				<div id="popWrap">
+					<div>
+						<article class="popup">
+
+							<div>
+								<h1>Lorem ipsum dolor sit amet.</h1>
+								<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti recusandae veritatis, est a eveniet, quibusdam doloremque odio consequuntur esse voluptatibus dolor. Aut aspernatur in fugit nulla tempore cum repellendus, debitis.</div>
+								<span class="close">X</span>
+							</div>
+							
+						</article> <!-- //.popup -->
+					</div>
+				</div> <!-- //#popWrap -->
+
+			</div> <!-- //#wrap > div > div -->
+
+		</div> <!-- //#wrap > div -->
+
+	</div><!-- //#wrap -->
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, target-densitydpi=medium-dpi" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title></title>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecod.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+		/* reset */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0;padding:0}
+		fieldset,img {border:0 none}
+		dl,ul,ol,menu,li {list-style:none}
+		blockquote, q {quotes: none}
+		blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+		input,select,textarea,button {vertical-align:middle}
+		button {border:0 none;background-color:transparent;cursor:pointer}
+		body {background:#fff}
+		body,th,td,input,select,textarea,button {font-size:16px;line-height:1;font-family:'돋움',dotum,sans-serif;color:#333}
+		a {color:#333;text-decoration:none}
+		a:active, a:hover {text-decoration:none}
+		address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+
+		/* class */
+		.hide {display:none;}
+		.vis {width:1px; height:1px; line-height:0; text-indent:-999999%; overflow:hidden; position:absolute; left:-99999%;}
+		.clear:after{content:"";display:block;clear:both;}
+
+		.con1{
+			font-size:1em;
+		}
+		.con2{
+			font-size:12px;
+		}
+		.con3{
+			font-size:0.5em;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+	<div class="con1">1em</div>
+	<div class="con2">12px
+		<div class="con3">부모요소 12px인 박스 안에 0.5em적용한 박스(결과 6px)</div>
+	</div>
+</body>
+</html>
